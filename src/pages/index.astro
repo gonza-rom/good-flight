@@ -10,18 +10,17 @@ import Layout from '../layouts/Layout.astro';
   <!-- ===== NAV ===== -->
   <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-neutral-100 shadow-sm h-20">
     <div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 h-full">
-
       <a href="/" class="flex items-center gap-3">
         <img src="/logo-bg.png" alt="Good Flight Logo" class="h-11 w-auto rounded-sm" />
       </a>
 
       <!-- Desktop links -->
       <div class="hidden md:flex items-center gap-8">
-        <a href="#metodologia" class="text-[#D71920] border-b-2 border-[#D71920] pb-0.5 font-medium text-sm" style="font-family: 'Noto Serif', serif;">Metodología</a>
-        <a href="#programa" class="text-neutral-600 font-medium text-sm hover:text-[#D71920] transition-colors duration-200" style="font-family: 'Noto Serif', serif;">Programa</a>
-        <a href="#beneficios" class="text-neutral-600 font-medium text-sm hover:text-[#D71920] transition-colors duration-200" style="font-family: 'Noto Serif', serif;">Beneficios</a>
-        <a href="#preguntas" class="text-neutral-600 font-medium text-sm hover:text-[#D71920] transition-colors duration-200" style="font-family: 'Noto Serif', serif;">Preguntas</a>
-        <a href="https://wa.me/5492615391110" target="_blank" rel="noopener" class="flex items-center gap-1.5 text-neutral-500 hover:text-[#D71920] transition-colors text-sm" style="font-family: 'Noto Serif', serif;">
+        <a href="#curso" class="text-[#D71920] border-b-2 border-[#D71920] pb-0.5 font-medium text-sm nav-serif">El Curso</a>
+        <a href="#materias" class="text-neutral-600 font-medium text-sm hover:text-[#D71920] transition-colors duration-200 nav-serif">Materias</a>
+        <a href="#nosotros" class="text-neutral-600 font-medium text-sm hover:text-[#D71920] transition-colors duration-200 nav-serif">Nosotros</a>
+        <a href="#requisitos" class="text-neutral-600 font-medium text-sm hover:text-[#D71920] transition-colors duration-200 nav-serif">Requisitos</a>
+        <a href="https://wa.me/5492615391110" target="_blank" rel="noopener" class="flex items-center gap-1.5 text-neutral-500 hover:text-[#D71920] transition-colors text-sm nav-serif">
           <span class="material-symbols-outlined" style="font-size:16px;">phone</span>
           +54 9 261 539-1110
         </a>
@@ -32,7 +31,6 @@ import Layout from '../layouts/Layout.astro';
           class="hidden md:inline-flex bg-[#D71920] text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-[#ae0011] active:scale-95 transition-all duration-200 shadow-sm">
           Inscribirme
         </a>
-        <!-- Hamburger -->
         <button id="menu-toggle" aria-label="Abrir menú"
           class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 rounded-lg hover:bg-neutral-100 transition-colors">
           <span class="ham-line block w-6 h-0.5 bg-neutral-700 transition-all duration-300 origin-center"></span>
@@ -42,59 +40,69 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
 
-    <!-- Mobile menu dropdown -->
+    <!-- Mobile menu -->
     <div id="mobile-menu"
       class="md:hidden absolute top-20 left-0 right-0 bg-white border-b border-neutral-100 shadow-lg px-6 py-6 flex-col gap-4 hidden">
-      <a href="#metodologia" class="mobile-link text-neutral-700 font-medium py-2.5 border-b border-neutral-100 flex items-center justify-between" style="font-family:'Noto Serif',serif;">
-        Metodología <span class="material-symbols-outlined text-neutral-400" style="font-size:18px;">chevron_right</span>
+      <a href="#curso" class="mobile-link text-neutral-700 font-medium py-2.5 border-b border-neutral-100 flex items-center justify-between nav-serif">
+        El Curso <span class="material-symbols-outlined text-neutral-400" style="font-size:18px;">chevron_right</span>
       </a>
-      <a href="#programa" class="mobile-link text-neutral-700 font-medium py-2.5 border-b border-neutral-100 flex items-center justify-between" style="font-family:'Noto Serif',serif;">
-        Programa <span class="material-symbols-outlined text-neutral-400" style="font-size:18px;">chevron_right</span>
+      <a href="#materias" class="mobile-link text-neutral-700 font-medium py-2.5 border-b border-neutral-100 flex items-center justify-between nav-serif">
+        Materias <span class="material-symbols-outlined text-neutral-400" style="font-size:18px;">chevron_right</span>
       </a>
-      <a href="#beneficios" class="mobile-link text-neutral-700 font-medium py-2.5 border-b border-neutral-100 flex items-center justify-between" style="font-family:'Noto Serif',serif;">
-        Beneficios <span class="material-symbols-outlined text-neutral-400" style="font-size:18px;">chevron_right</span>
+      <a href="#nosotros" class="mobile-link text-neutral-700 font-medium py-2.5 border-b border-neutral-100 flex items-center justify-between nav-serif">
+        Nosotros <span class="material-symbols-outlined text-neutral-400" style="font-size:18px;">chevron_right</span>
       </a>
-      <a href="#preguntas" class="mobile-link text-neutral-700 font-medium py-2.5 border-b border-neutral-100 flex items-center justify-between" style="font-family:'Noto Serif',serif;">
-        Preguntas <span class="material-symbols-outlined text-neutral-400" style="font-size:18px;">chevron_right</span>
+      <a href="#requisitos" class="mobile-link text-neutral-700 font-medium py-2.5 border-b border-neutral-100 flex items-center justify-between nav-serif">
+        Requisitos <span class="material-symbols-outlined text-neutral-400" style="font-size:18px;">chevron_right</span>
       </a>
-      <a href="https://wa.me/5492615391110?text=Hola%2C+quiero+inscribirme+al+curso+TCP"
-        target="_blank" rel="noopener"
+      <a href="https://wa.me/5492615391110?text=Hola%2C+quiero+inscribirme+al+curso+TCP" target="_blank" rel="noopener"
         class="mt-2 w-full bg-[#D71920] text-white py-3.5 rounded-lg font-bold text-sm text-center tracking-wider hover:bg-[#ae0011] transition-colors">
         INSCRIBIRME AL CURSO
       </a>
-      <a href="https://wa.me/5492615391110" target="_blank" rel="noopener"
-        class="w-full border-2 border-[#C4A456] text-[#C4A456] py-3.5 rounded-lg font-bold text-sm text-center tracking-wider flex items-center justify-center gap-2">
-        <span class="material-symbols-outlined" style="font-size:18px;">phone</span>
-        +54 9 261 539-1110
-      </a>
+      <div class="flex gap-3">
+        <a href="https://wa.me/5492615391110" target="_blank" rel="noopener"
+          class="flex-1 border-2 border-[#C4A456] text-[#C4A456] py-3 rounded-lg font-bold text-xs text-center tracking-wider flex items-center justify-center gap-1.5">
+          <span class="material-symbols-outlined" style="font-size:16px;">phone</span>
+          WhatsApp
+        </a>
+        <a href="https://instagram.com/ciacgoodflight" target="_blank" rel="noopener"
+          class="flex-1 border-2 border-neutral-200 text-neutral-500 py-3 rounded-lg font-bold text-xs text-center tracking-wider flex items-center justify-center gap-1.5">
+          <span class="material-symbols-outlined" style="font-size:16px;">photo_camera</span>
+          Instagram
+        </a>
+      </div>
     </div>
   </nav>
 
   <!-- ===== HERO ===== -->
   <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
     <div class="absolute inset-0 z-0">
-      <img
-        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXApJxCIqg9kKsjzschP3v6RmoEVEXf-XbUn5KA6iJPKmGwvq7letBZHZT-LbfHB8oJclAR4f1RHM_GmZ1LZrmlUVPy8fbXY11TXyjQSMmp5b9KtfYGugPKljJzR6YMzGfF0aVtyEelt49CteLEDyPl1QuIKWh6eUlWREeJkSz0HnDkZKB3xxmNrrO6vgM_M3XY1wnVBNPIfilhHCkt6Cj_Polmaji1uYM_SECA56FfZh-q9u1_93OhYhpt2hy8pHUFDcKB_aYN9E"
-        alt="Cabina de aeronave con azafata profesional"
-        class="w-full h-full object-cover"
-      />
-      <div class="absolute inset-0 bg-black/45"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent"></div>
+      <video autoplay muted loop playsinline class="w-full h-full object-cover">
+        <source src="/avion.mp4" type="video/mp4" />
+        <img src="/foto-2.jpeg" alt="Good Flight – Curso TCP" class="w-full h-full object-cover" />
+      </video>
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-transparent"></div>
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-8 grid md:grid-cols-2 gap-12 items-center py-16">
 
       <!-- Copy -->
       <div class="text-white animate-fade-in-up">
-        <span class="inline-block bg-[#C4A456] text-white px-4 py-1 rounded-full text-label-sm mb-6">
-          Próximo inicio — Anotate ya
+        <span class="inline-block bg-[#C4A456] text-white px-4 py-1 rounded-full text-xs font-semibold tracking-widest mb-6 uppercase">
+          Próximamente — Cupos Limitados
         </span>
-        <h1 class="text-display mb-6">Tu carrera en las nubes comienza aquí.</h1>
-        <p class="text-xl font-semibold mb-3 text-neutral-100 leading-relaxed" style="font-family:'Noto Serif',serif;">
-          Curso de Tripulante de Cabina de Pasajeros (TCP) — Modalidad Presencial
+        <h1 class="text-display mb-5 leading-tight" style="font-family:'Noto Serif',serif;">
+          Nunca es muy tarde para ser quien tú quieras ser.
+        </h1>
+        <p class="text-lg font-medium mb-3 text-neutral-100 leading-relaxed">
+          Curso de Tripulante de Cabina de Pasajeros (TCP)
         </p>
-        <p class="text-sm text-neutral-300 mb-10">
-          Teoría y prácticas en Mendoza · Práctica de vuelo en Buenos Aires
+        <p class="text-sm text-neutral-300 mb-2">
+          Modalidad presencial · Mendoza · Sábados de 8 a 12 y 16 a 20
+        </p>
+        <p class="text-sm text-neutral-400 mb-10">
+          Mock Up en CEEPA – El Palomar · Ditching en Círculo de Oficiales – Mendoza
         </p>
         <div class="flex flex-wrap items-center gap-5 text-sm text-neutral-200">
           <span class="flex items-center gap-2">
@@ -103,25 +111,24 @@ import Layout from '../layouts/Layout.astro';
           </span>
           <span class="flex items-center gap-2">
             <span class="material-symbols-outlined text-[#C4A456]" style="font-size:20px;font-variation-settings:'FILL' 1;">location_on</span>
-            100% Presencial
+            Mendoza
           </span>
           <span class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-[#C4A456]" style="font-size:20px;font-variation-settings:'FILL' 1;">schedule</span>
-            Inicio Próximamente
+            <span class="material-symbols-outlined text-[#C4A456]" style="font-size:20px;font-variation-settings:'FILL' 1;">group</span>
+            Solo 12 cupos por grupo
           </span>
         </div>
       </div>
 
       <!-- Form card -->
       <div class="glass-panel p-7 md:p-8 rounded-2xl shadow-2xl w-full md:max-w-md md:ml-auto animate-fade-in-up-delay-2">
-        <h3 class="text-headline-md text-neutral-900 mb-1.5">Anotate al curso</h3>
+        <h3 class="text-headline-md text-neutral-900 mb-1.5" style="font-family:'Noto Serif',serif;">Anotate al curso</h3>
         <p class="text-neutral-500 mb-6 text-sm leading-relaxed">
-          Dejanos tus datos y te contactamos por WhatsApp con toda la información y fecha de inicio.
+          Dejanos tus datos y te contactamos por WhatsApp con toda la información y la fecha de inicio.
         </p>
 
-        <!-- Primary: WhatsApp CTA -->
         <a
-          href="https://wa.me/5492615391110?text=Hola%2C+quiero+m%C3%A1s+informaci%C3%B3n+sobre+el+curso+de+TCP+(Tripulante+de+Cabina+de+Pasajeros)"
+          href="https://wa.me/5492615391110?text=Hola%2C+quiero+m%C3%A1s+informaci%C3%B3n+sobre+el+curso+de+TCP"
           target="_blank" rel="noopener"
           class="w-full flex items-center justify-center gap-3 bg-[#25D366] text-white py-4 rounded-xl font-bold text-sm tracking-wider hover:bg-[#1ebe5d] active:scale-[0.98] transition-all duration-200 shadow-lg hover:shadow-xl mb-5"
         >
@@ -162,61 +169,113 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- ===== METODOLOGÍA ===== -->
-  <section id="metodologia" class="py-24 bg-[#f3f4f5]">
+  <!-- ===== INFO RÁPIDA ===== -->
+  <section class="bg-[#D71920] py-5">
+    <div class="max-w-7xl mx-auto px-6 md:px-8">
+      <div class="flex flex-wrap justify-center gap-x-10 gap-y-3 text-white text-sm font-medium">
+        <span class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#C4A456]" style="font-size:18px;font-variation-settings:'FILL' 1;">schedule</span>
+          Sábados 8–12 y 16–20
+        </span>
+        <span class="text-white/30 hidden md:block">|</span>
+        <span class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#C4A456]" style="font-size:18px;font-variation-settings:'FILL' 1;">calendar_month</span>
+          Duración: 6 / 8 / 12 meses
+        </span>
+        <span class="text-white/30 hidden md:block">|</span>
+        <span class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#C4A456]" style="font-size:18px;font-variation-settings:'FILL' 1;">group</span>
+          Máximo 12 personas por grupo
+        </span>
+        <span class="text-white/30 hidden md:block">|</span>
+        <span class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#C4A456]" style="font-size:18px;font-variation-settings:'FILL' 1;">location_on</span>
+          Mendoza · Presencial
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EL CURSO ===== -->
+  <section id="curso" class="py-24 bg-[#f3f4f5]">
     <div class="max-w-7xl mx-auto px-6 md:px-8">
       <div class="text-center mb-16">
-        <h2 class="text-headline-lg text-[#D71920] mb-4">Formación de Excelencia</h2>
-        <div class="h-0.5 w-20 bg-[#C4A456] mx-auto"></div>
+        <span class="text-xs font-bold tracking-widest text-[#C4A456] uppercase mb-3 block">Formación Integral</span>
+        <h2 class="text-headline-lg text-[#D71920] mb-4" style="font-family:'Noto Serif',serif;">Convertite en TCP</h2>
+        <p class="text-neutral-500 max-w-xl mx-auto text-sm leading-relaxed">
+          Una formación integral que combina teoría y prácticas reales para que estés listo el día que subas a bordo.
+        </p>
+        <div class="h-0.5 w-20 bg-[#C4A456] mx-auto mt-6"></div>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8" id="programa">
-        <div class="reveal-card bg-white p-8 rounded-lg shadow-sm gold-gradient-border hover:shadow-xl hover:-translate-y-1 transition-all duration-300 opacity-0">
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="reveal-card bg-white p-8 rounded-xl shadow-sm border-b-2 border-[#C4A456] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 opacity-0">
           <div class="flex items-start justify-between mb-6">
             <span class="material-symbols-outlined text-5xl text-[#C4A456]" style="font-variation-settings:'FILL' 1;">location_city</span>
             <span class="text-6xl font-black text-neutral-100 leading-none select-none" style="font-family:'Noto Serif',serif;">01</span>
           </div>
-          <h4 class="text-headline-md mb-4">Formación Presencial</h4>
-          <p class="text-neutral-600 text-sm leading-relaxed">Clases teóricas y prácticas acuáticas/terrestres en nuestras sedes de Mendoza. Prácticas de vuelo real coordinadas en Buenos Aires.</p>
+          <h4 class="font-bold text-neutral-900 text-lg mb-3" style="font-family:'Noto Serif',serif;">Formación Presencial</h4>
+          <p class="text-neutral-500 text-sm leading-relaxed">Clases los sábados en Mendoza. Mock Up en CEEPA – El Palomar y Ditching en el Círculo de Oficiales de Mendoza.</p>
         </div>
 
-        <div class="reveal-card bg-white p-8 rounded-lg shadow-sm gold-gradient-border hover:shadow-xl hover:-translate-y-1 transition-all duration-300 opacity-0" style="transition-delay:0.12s;">
+        <!-- Card 2 -->
+        <div class="reveal-card bg-white p-8 rounded-xl shadow-sm border-b-2 border-[#C4A456] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 opacity-0" style="transition-delay:0.12s;">
           <div class="flex items-start justify-between mb-6">
             <span class="material-symbols-outlined text-5xl text-[#C4A456]" style="font-variation-settings:'FILL' 1;">workspace_premium</span>
             <span class="text-6xl font-black text-neutral-100 leading-none select-none" style="font-family:'Noto Serif',serif;">02</span>
           </div>
-          <h4 class="text-headline-md mb-4">Aval ANAC</h4>
-          <p class="text-neutral-600 text-sm leading-relaxed">Nuestro programa cumple con los más altos estándares internacionales y está avalado por la Administración Nacional de Aviación Civil.</p>
+          <h4 class="font-bold text-neutral-900 text-lg mb-3" style="font-family:'Noto Serif',serif;">Aval ANAC</h4>
+          <p class="text-neutral-500 text-sm leading-relaxed">Programa avalado por la Administración Nacional de Aviación Civil. Título oficial reconocido por todas las aerolíneas.</p>
         </div>
 
-        <div class="reveal-card bg-white p-8 rounded-lg shadow-sm gold-gradient-border hover:shadow-xl hover:-translate-y-1 transition-all duration-300 opacity-0" style="transition-delay:0.24s;">
+        <!-- Card 3 -->
+        <div class="reveal-card bg-white p-8 rounded-xl shadow-sm border-b-2 border-[#C4A456] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 opacity-0" style="transition-delay:0.24s;">
           <div class="flex items-start justify-between mb-6">
             <span class="material-symbols-outlined text-5xl text-[#C4A456]" style="font-variation-settings:'FILL' 1;">menu_book</span>
             <span class="text-6xl font-black text-neutral-100 leading-none select-none" style="font-family:'Noto Serif',serif;">03</span>
           </div>
-          <h4 class="text-headline-md mb-4">Currícula Completa</h4>
-          <p class="text-neutral-600 text-sm leading-relaxed">Desde seguridad aérea y primeros auxilios hasta servicio a bordo de lujo y etiqueta internacional. Todo lo que necesitas para brillar.</p>
+          <h4 class="font-bold text-neutral-900 text-lg mb-3" style="font-family:'Noto Serif',serif;">Currícula Profesional</h4>
+          <p class="text-neutral-500 text-sm leading-relaxed">Desde seguridad aérea y primeros auxilios hasta inglés aeronáutico y mercancías peligrosas. Todo lo que necesitás para volar.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== POR QUÉ GOOD FLIGHT ===== -->
+  <!-- ===== FOTOS DEL CURSO ===== -->
   <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center gap-16">
 
+      <!-- Bloque de fotos -->
       <div class="md:w-1/2 reveal-card opacity-0">
-        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-          <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuytKHfA8b_MJQPHzszRceVDlFmeeHyPDZ_SrSMSNrudnW7qFa_Kwxd6rFauWqkfs-yZl65vTETWSjbWMNXxjtOaLSy3hfVNefvGqXT5csJxQgrU_3lb-jSz3kJkOvlkiEZhi-F8ac2H8fVoDtdMcwtDYD4f5BdFUqiT-gxu7jn06erqkWlEIFyrCQj5J0C8Oc0t5gPFzfebTqNLMIOi8VaSiFVFzny2mjP-J9MZk8LuDKcQVTrhqGWFGesoHsgYdkk6yytjDynRI"
-            alt="Instalaciones de entrenamiento Good Flight" class="w-full h-auto"
-          />
-          <div class="absolute bottom-0 left-0 right-0 h-1 bg-[#C4A456]"></div>
+        <div class="relative">
+          <!-- Foto principal -->
+          <div class="relative rounded-2xl overflow-hidden shadow-xl">
+            <img src="/foto-2.jpeg" alt="Prácticas en aeronave – Good Flight"
+              class="w-full h-72 object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-[#C4A456]"></div>
+          </div>
+          <!-- Foto secundaria -->
+          <div class="relative mt-4 ml-12 rounded-2xl overflow-hidden shadow-xl border-4 border-white">
+            <img src="/foto-3.jpeg" alt="Prácticas de ditching en pileta – Good Flight"
+              class="w-full h-52 object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-[#C4A456]"></div>
+          </div>
+          <!-- Línea decorativa -->
+          <div class="absolute -left-4 top-8 bottom-8 w-0.5 bg-[#C4A456] opacity-40 rounded-full hidden md:block"></div>
+          <!-- Badge -->
+          <div class="absolute -bottom-4 left-6 bg-[#D71920] text-white px-5 py-2.5 rounded-full shadow-lg flex items-center gap-2 text-sm font-bold tracking-wide">
+            <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1;">verified</span>
+            Certificado ANAC
+          </div>
         </div>
       </div>
 
-      <div class="md:w-1/2 reveal-card opacity-0" style="transition-delay:0.15s;">
-        <h2 class="text-headline-lg text-neutral-900 mb-5">¿Por qué elegir Good Flight?</h2>
+      <!-- Texto -->
+      <div class="md:w-1/2 reveal-card opacity-0 pt-8" style="transition-delay:0.15s;">
+        <h2 class="text-headline-lg text-neutral-900 mb-5" style="font-family:'Noto Serif',serif;">¿Por qué elegir Good Flight?</h2>
         <p class="text-neutral-500 text-lg mb-10 italic leading-relaxed" style="font-family:'Noto Serif',serif;">
           "Liderando la formación aeronáutica con trayectoria y excelencia académica en Mendoza."
         </p>
@@ -227,7 +286,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
             <div>
               <span class="font-bold text-neutral-900 block mb-1">Instructores Activos</span>
-              <span class="text-neutral-500 text-sm leading-relaxed">Aprende de profesionales que operan actualmente en las aerolíneas más importantes del mundo.</span>
+              <span class="text-neutral-500 text-sm leading-relaxed">Aprendé de profesionales que operan actualmente en aerolíneas nacionales e internacionales.</span>
             </div>
           </li>
           <li class="flex items-start gap-5">
@@ -235,8 +294,17 @@ import Layout from '../layouts/Layout.astro';
               <span class="material-symbols-outlined text-[#D71920]" style="font-size:22px;font-variation-settings:'FILL' 1;">check_circle</span>
             </div>
             <div>
-              <span class="font-bold text-neutral-900 block mb-1">Prácticas Intensivas</span>
-              <span class="text-neutral-500 text-sm leading-relaxed">Días intensivos de formación práctica presencial en simuladores de última generación.</span>
+              <span class="font-bold text-neutral-900 block mb-1">Prácticas Reales</span>
+              <span class="text-neutral-500 text-sm leading-relaxed">Mock Up en aeronave real en CEEPA (El Palomar) y prácticas de ditching acuático en Mendoza.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-5">
+            <div class="bg-red-50 p-2.5 rounded-lg flex-shrink-0">
+              <span class="material-symbols-outlined text-[#D71920]" style="font-size:22px;font-variation-settings:'FILL' 1;">check_circle</span>
+            </div>
+            <div>
+              <span class="font-bold text-neutral-900 block mb-1">Grupos Reducidos</span>
+              <span class="text-neutral-500 text-sm leading-relaxed">Máximo 12 alumnos por grupo para garantizar una atención personalizada y aprendizaje real.</span>
             </div>
           </li>
           <li class="flex items-start gap-5">
@@ -253,43 +321,213 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- ===== BENEFICIOS ===== -->
-  <section id="beneficios" class="py-24 bg-neutral-900 text-white overflow-hidden relative">
+  <!-- ===== MATERIAS ===== -->
+  <section id="materias" class="py-24 bg-neutral-900 text-white overflow-hidden relative">
     <div class="skew-bg"></div>
     <div class="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
       <div class="mb-14 reveal-card opacity-0">
-        <h2 class="text-headline-lg text-[#C4A456] mb-4">Beneficios del Curso Presencial</h2>
+        <span class="text-xs font-bold tracking-widest text-[#C4A456] uppercase mb-3 block">Profesionalismo desde el primer día</span>
+        <h2 class="text-headline-lg text-white mb-4" style="font-family:'Noto Serif',serif;">Materias del Curso TCP</h2>
         <p class="text-neutral-400 max-w-xl text-sm leading-relaxed">
-          Diseñado para darte la formación completa que exigen las aerolíneas, con instructores activos y prácticas reales.
+          Un plan de estudios completo diseñado para que domines cada aspecto del rol de Tripulante de Cabina de Pasajeros.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <div class="reveal-card md:col-span-2 bg-neutral-800 p-8 rounded-xl flex flex-col justify-between border border-neutral-700 hover:border-[#C4A456]/40 transition-colors duration-300 opacity-0">
-          <div>
-            <h3 class="text-headline-md text-[#C4A456] mb-4">Infraestructura de Vanguardia</h3>
-            <p class="text-neutral-300 text-sm leading-relaxed">Contamos con instalaciones modernas en Mendoza preparadas para simulaciones de emergencia y servicio a bordo de primer nivel.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {[
+          { icon: 'flight', materia: 'Conocimientos Aeronáuticos', desc: 'Fundamentos de la aviación y operación de aeronaves.' },
+          { icon: 'gavel', materia: 'Obligaciones y Responsabilidades', desc: 'Marco legal y reglamentario de la tripulación de cabina.' },
+          { icon: 'psychology', materia: 'Factores Humanos', desc: 'Comunicación, trabajo en equipo y toma de decisiones.' },
+          { icon: 'emergency', materia: 'Procedimientos de Emergencia', desc: 'Evacuación, incendios, descompresión y más.' },
+          { icon: 'medical_services', materia: 'Información Aeromédica y Primeros Auxilios', desc: 'Atención médica a bordo en situaciones críticas.' },
+          { icon: 'search', materia: 'Búsqueda y Salvamento', desc: 'Protocolos SAR y coordinación con servicios de rescate.' },
+          { icon: 'forest', materia: 'Supervivencia', desc: 'Técnicas de supervivencia en distintos entornos.' },
+          { icon: 'inventory_2', materia: 'Mercancías Peligrosas', desc: 'Identificación, clasificación y manejo de materiales peligrosos.' },
+          { icon: 'language', materia: 'Inglés Aeronáutico', desc: 'Comunicación en inglés técnico para el entorno de cabina.' },
+        ].map((item, i) => (
+          <div class={`reveal-card bg-neutral-800 p-6 rounded-xl border border-neutral-700 hover:border-[#C4A456]/50 transition-all duration-300 opacity-0`} style={`transition-delay:${i * 0.07}s`}>
+            <span class="material-symbols-outlined text-[#C4A456] mb-3 block" style="font-size:28px;font-variation-settings:'FILL' 1;">{item.icon}</span>
+            <h4 class="font-bold text-white text-sm mb-2" style="font-family:'Noto Serif',serif;">{item.materia}</h4>
+            <p class="text-neutral-400 text-xs leading-relaxed">{item.desc}</p>
           </div>
-          <div class="mt-8 flex justify-end">
-            <span class="material-symbols-outlined text-6xl opacity-10 text-[#C4A456]">apartment</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QUIÉNES SOMOS ===== -->
+  <section id="nosotros" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 md:px-8">
+      <div class="text-center mb-16">
+        <span class="text-xs font-bold tracking-widest text-[#C4A456] uppercase mb-3 block">Quiénes Somos</span>
+        <h2 class="text-headline-lg text-neutral-900 mb-4" style="font-family:'Noto Serif',serif;">Una historia de pasión por la aviación</h2>
+        <div class="h-0.5 w-20 bg-[#C4A456] mx-auto"></div>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center gap-16 max-w-5xl mx-auto reveal-card opacity-0">
+
+        <!-- Foto fundadora -->
+        <div class="md:w-2/5 flex-shrink-0">
+          <div class="relative">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+              <img src="/yo.jpg" alt="Débora D. Cerda – Fundadora Good Flight"
+                class="w-full h-96 object-cover object-top" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 h-1 bg-[#C4A456]"></div>
+              <!-- Nombre superpuesto -->
+              <div class="absolute bottom-5 left-5 right-5">
+                <p class="text-white font-bold text-lg" style="font-family:'Noto Serif',serif;">Débora D. Cerda</p>
+                <p class="text-[#C4A456] text-xs font-semibold tracking-widest uppercase">Fundadora & Gerente Responsable</p>
+              </div>
+            </div>
+            <!-- Decoración dorada -->
+            <div class="absolute -right-3 top-6 bottom-6 w-0.5 bg-[#C4A456] opacity-40 hidden md:block"></div>
           </div>
         </div>
-        <div class="reveal-card bg-[#D71920] p-8 rounded-xl opacity-0" style="transition-delay:0.12s;">
-          <h3 class="text-headline-md mb-4">Inicio Próximamente</h3>
-          <p class="text-sm opacity-90 leading-relaxed">El curso presencial TCP comenzará pronto en Mendoza. ¡Anotate ahora y asegurá tu lugar!</p>
-          <a href="https://wa.me/5492615391110?text=Hola%2C+quiero+anotarme+al+curso+TCP" target="_blank" rel="noopener"
-            class="mt-6 inline-flex items-center gap-2 bg-white text-[#D71920] px-4 py-2.5 rounded-lg font-bold text-xs tracking-wider hover:bg-neutral-100 transition-colors">
-            ANOTARME
-          </a>
+
+        <!-- Texto -->
+        <div class="md:w-3/5">
+          <p class="text-neutral-600 text-lg leading-relaxed mb-6 italic" style="font-family:'Noto Serif',serif;">
+            "Good Flight nace de mi propia historia: años de esfuerzo, formación constante y pasión por la aviación."
+          </p>
+          <p class="text-neutral-500 text-sm leading-relaxed mb-6">
+            Después de obtener diversas licencias aeronáuticas y recorrer mi propio camino en la industria, hoy mi propósito es brindar herramientas reales a quienes sueñan con construir su futuro en el mundo aeronáutico.
+          </p>
+          <p class="text-neutral-500 text-sm leading-relaxed mb-8">
+            En Good Flight creemos que nunca es muy tarde para ser quien querés ser. Cada alumno es parte de una familia pequeña y comprometida, donde la excelencia y la dedicación son el motor de cada clase.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <div class="bg-[#f3f4f5] px-5 py-3 rounded-xl text-center">
+              <p class="text-2xl font-black text-[#D71920]" style="font-family:'Noto Serif',serif;">12</p>
+              <p class="text-xs text-neutral-500 font-medium">Cupos máximos</p>
+            </div>
+            <div class="bg-[#f3f4f5] px-5 py-3 rounded-xl text-center">
+              <p class="text-2xl font-black text-[#D71920]" style="font-family:'Noto Serif',serif;">9</p>
+              <p class="text-xs text-neutral-500 font-medium">Materias oficiales</p>
+            </div>
+            <div class="bg-[#f3f4f5] px-5 py-3 rounded-xl text-center">
+              <p class="text-2xl font-black text-[#D71920]" style="font-family:'Noto Serif',serif;">100%</p>
+              <p class="text-xs text-neutral-500 font-medium">Presencial</p>
+            </div>
+          </div>
         </div>
-        <div class="reveal-card bg-neutral-800 p-8 rounded-xl border border-neutral-700 hover:border-[#C4A456]/40 transition-colors duration-300 opacity-0" style="transition-delay:0.24s;">
-          <h3 class="text-headline-md mb-4">Clases en Vivo</h3>
-          <p class="text-sm text-neutral-400 leading-relaxed">Clases presenciales con instructores activos para resolución de dudas y práctica real en todo momento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VESTIMENTA / GALERÍA ===== -->
+  <section class="py-16 bg-[#f3f4f5]">
+    <div class="max-w-7xl mx-auto px-6 md:px-8">
+      <div class="text-center mb-10 reveal-card opacity-0">
+        <span class="text-xs font-bold tracking-widest text-[#C4A456] uppercase mb-3 block">La experiencia completa</span>
+        <h2 class="text-headline-lg text-neutral-900" style="font-family:'Noto Serif',serif;">Así se vive el curso</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-card opacity-0" style="transition-delay:0.1s;">
+        <div class="relative rounded-2xl overflow-hidden shadow-lg group">
+          <img src="/foto.jpeg" alt="Vestimenta oficial TCP – Good Flight"
+            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="text-white font-bold text-sm" style="font-family:'Noto Serif',serif;">Vestimenta Oficial</p>
+            <p class="text-neutral-300 text-xs">Uniforme profesional del cursante TCP</p>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 h-0.5 bg-[#C4A456]"></div>
         </div>
-        <div class="reveal-card md:col-span-4 bg-[#C4A456]/10 p-10 rounded-xl flex flex-col md:flex-row items-center gap-8 border border-[#C4A456]/25 hover:border-[#C4A456]/50 transition-colors duration-300 opacity-0" style="transition-delay:0.36s;">
-          <span class="material-symbols-outlined text-7xl text-[#C4A456] flex-shrink-0" style="font-variation-settings:'FILL' 1;">airplane_ticket</span>
-          <div>
-            <h3 class="text-headline-md text-[#C4A456] mb-2">Prácticas de Vuelo en Buenos Aires</h3>
-            <p class="text-neutral-300 text-sm leading-relaxed max-w-2xl">Complementamos la formación teórica presencial en Mendoza con módulos de práctica de vuelo real en Buenos Aires, garantizando que domines cada procedimiento antes de tu examen ANAC.</p>
+        <div class="relative rounded-2xl overflow-hidden shadow-lg group">
+          <img src="/foto-2.jpeg" alt="Prácticas en aeronave – Good Flight"
+            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="text-white font-bold text-sm" style="font-family:'Noto Serif',serif;">Mock Up en Aeronave</p>
+            <p class="text-neutral-300 text-xs">CEEPA – El Palomar, Buenos Aires</p>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 h-0.5 bg-[#C4A456]"></div>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-lg group">
+          <img src="/foto-3.jpeg" alt="Prácticas de ditching – Good Flight"
+            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="text-white font-bold text-sm" style="font-family:'Noto Serif',serif;">Prácticas de Ditching</p>
+            <p class="text-neutral-300 text-xs">Círculo de Oficiales – Mendoza</p>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 h-0.5 bg-[#C4A456]"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REQUISITOS ===== -->
+  <section id="requisitos" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 md:px-8">
+      <div class="text-center mb-16">
+        <span class="text-xs font-bold tracking-widest text-[#C4A456] uppercase mb-3 block">¿Sos candidato?</span>
+        <h2 class="text-headline-lg text-neutral-900 mb-4" style="font-family:'Noto Serif',serif;">Requisitos de Inscripción</h2>
+        <div class="h-0.5 w-20 bg-[#C4A456] mx-auto"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <div class="reveal-card opacity-0">
+          <div class="bg-[#f3f4f5] rounded-2xl p-8">
+            <h3 class="font-bold text-neutral-900 text-lg mb-6 flex items-center gap-3" style="font-family:'Noto Serif',serif;">
+              <span class="material-symbols-outlined text-[#C4A456]" style="font-size:24px;font-variation-settings:'FILL' 1;">checklist</span>
+              Requisitos Generales
+            </h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3 text-sm text-neutral-600">
+                <span class="material-symbols-outlined text-[#C4A456] mt-0.5 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;">check_circle</span>
+                <span><strong class="text-neutral-800">Edad mínima:</strong> 18 años cumplidos</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-neutral-600">
+                <span class="material-symbols-outlined text-[#C4A456] mt-0.5 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;">check_circle</span>
+                <span><strong class="text-neutral-800">Estudios:</strong> Secundario completo</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-neutral-600">
+                <span class="material-symbols-outlined text-[#C4A456] mt-0.5 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;">check_circle</span>
+                <span><strong class="text-neutral-800">Requisito médico:</strong> CMA (Certificado Médico Aeronáutico)</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-neutral-600">
+                <span class="material-symbols-outlined text-[#C4A456] mt-0.5 flex-shrink-0" style="font-size:18px;font-variation-settings:'FILL' 1;">check_circle</span>
+                <span><strong class="text-neutral-800">Documentación necesaria</strong> — te informamos al inscribirte</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="reveal-card opacity-0" style="transition-delay:0.12s;">
+          <div class="bg-neutral-900 rounded-2xl p-8 text-white h-full flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-white text-lg mb-4 flex items-center gap-3" style="font-family:'Noto Serif',serif;">
+                <span class="material-symbols-outlined text-[#C4A456]" style="font-size:24px;font-variation-settings:'FILL' 1;">info</span>
+                Datos del Curso
+              </h3>
+              <ul class="space-y-3 text-sm text-neutral-300">
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[#C4A456]" style="font-size:16px;">schedule</span>
+                  Sábados 8–12 hs y 16–20 hs
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[#C4A456]" style="font-size:16px;">calendar_month</span>
+                  Duración: 6, 8 o 12 meses
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[#C4A456]" style="font-size:16px;">location_on</span>
+                  Dictado en Mendoza
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[#C4A456]" style="font-size:16px;">event</span>
+                  Fecha de inicio: A confirmar
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[#C4A456]" style="font-size:16px;">group</span>
+                  Cupos limitados: 12 personas
+                </li>
+              </ul>
+            </div>
+            <a href="https://wa.me/5492615391110?text=Hola%2C+quiero+consultar+los+requisitos+del+curso+TCP" target="_blank" rel="noopener"
+              class="mt-8 w-full bg-[#C4A456] text-white py-3 rounded-lg font-bold text-xs tracking-widest text-center hover:bg-[#b3933f] transition-colors block">
+              CONSULTAR REQUISITOS
+            </a>
           </div>
         </div>
       </div>
@@ -297,12 +535,15 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- ===== CTA FINAL ===== -->
-  <section id="preguntas" class="py-32 bg-white text-center">
+  <section class="py-32 bg-white text-center">
     <div class="max-w-4xl mx-auto px-6 md:px-8 reveal-card opacity-0">
-      <p class="text-label-sm text-[#C4A456] mb-4">El próximo paso es tuyo</p>
-      <h2 class="text-display mb-8 italic">¿Lista para despegar?</h2>
-      <p class="text-lg text-neutral-500 mb-14 max-w-xl mx-auto leading-relaxed">
-        El curso TCP presencial comienza próximamente. Anotate ahora y te contactamos con todos los detalles por WhatsApp.
+      <p class="text-xs font-bold tracking-widest text-[#C4A456] uppercase mb-4">El próximo paso es tuyo</p>
+      <h2 class="text-display mb-4 italic" style="font-family:'Noto Serif',serif;">¿Lista para despegar?</h2>
+      <p class="text-lg text-neutral-400 mb-3" style="font-family:'Noto Serif',serif;">
+        "Nunca es muy tarde para ser quien tú quieras ser."
+      </p>
+      <p class="text-sm text-neutral-500 mb-14 max-w-xl mx-auto leading-relaxed">
+        El curso TCP presencial comienza próximamente en Mendoza. Anotate ahora, los cupos son limitados — solo 12 personas por grupo.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-5">
         <a href="https://wa.me/5492615391110?text=Hola%2C+quiero+inscribirme+al+curso+de+TCP+(Tripulante+de+Cabina+de+Pasajeros)"
@@ -313,10 +554,10 @@ import Layout from '../layouts/Layout.astro';
           </svg>
           INSCRIBIRME AL CURSO
         </a>
-        <a href="https://wa.me/5492615391110" target="_blank" rel="noopener"
+        <a href="https://instagram.com/ciacgoodflight" target="_blank" rel="noopener"
           class="border-2 border-[#C4A456] text-[#C4A456] px-10 py-5 rounded-lg font-bold text-sm tracking-widest hover:bg-[#C4A456] hover:text-white hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2.5">
-          <span class="material-symbols-outlined" style="font-size:20px;">phone</span>
-          CONSULTAR AHORA
+          <span class="material-symbols-outlined" style="font-size:20px;">photo_camera</span>
+          @CIACGOODFLIGHT
         </a>
       </div>
     </div>
@@ -326,11 +567,9 @@ import Layout from '../layouts/Layout.astro';
   <footer class="bg-neutral-50 border-t border-neutral-200 pt-14 pb-10">
     <div class="max-w-7xl mx-auto px-6 md:px-8 flex flex-col md:flex-row justify-between items-center gap-10">
       <div class="flex flex-col items-center md:items-start gap-4">
-        <div class="flex items-center gap-3">
-          <img src="/logo-bg.png" alt="Logo Good Flight" class="h-10 w-auto opacity-90 rounded-sm" />
-        </div>
+        <img src="/logo-bg.png" alt="Logo Good Flight" class="h-10 w-auto opacity-90 rounded-sm" />
         <p class="text-neutral-400 text-xs max-w-xs text-center md:text-left leading-relaxed" style="font-family:'Noto Serif',serif;">
-          © 2025 Good Flight Training Center.<br>Excelencia en Formación Aeronáutica.
+          © 2025 Good Flight – CIAC.<br>Excelencia en Formación Aeronáutica. Mendoza, Argentina.
         </p>
         <a href="https://wa.me/5492615391110" target="_blank" rel="noopener"
           class="flex items-center gap-1.5 text-neutral-400 hover:text-[#D71920] transition-colors text-xs">
@@ -339,20 +578,19 @@ import Layout from '../layouts/Layout.astro';
         </a>
       </div>
       <nav class="flex flex-wrap justify-center gap-8 text-xs tracking-widest uppercase">
-        <a href="#" class="text-neutral-400 hover:text-neutral-800 transition-colors" style="font-family:'Noto Serif',serif;">Privacidad</a>
-        <a href="#" class="text-neutral-400 hover:text-neutral-800 transition-colors" style="font-family:'Noto Serif',serif;">Términos y Condiciones</a>
-        <a href="#" class="text-neutral-400 hover:text-neutral-800 transition-colors" style="font-family:'Noto Serif',serif;">Contacto</a>
+        <a href="#curso" class="text-neutral-400 hover:text-neutral-800 transition-colors nav-serif">El Curso</a>
+        <a href="#materias" class="text-neutral-400 hover:text-neutral-800 transition-colors nav-serif">Materias</a>
+        <a href="#nosotros" class="text-neutral-400 hover:text-neutral-800 transition-colors nav-serif">Nosotros</a>
+        <a href="#requisitos" class="text-neutral-400 hover:text-neutral-800 transition-colors nav-serif">Requisitos</a>
       </nav>
       <div class="flex gap-3">
-        <a href="#" class="w-9 h-9 rounded-full bg-neutral-100 hover:bg-[#D71920] hover:text-white flex items-center justify-center text-neutral-400 transition-all duration-200">
-          <span class="material-symbols-outlined" style="font-size:18px;">public</span>
+        <a href="https://instagram.com/ciacgoodflight" target="_blank" rel="noopener"
+          class="w-9 h-9 rounded-full bg-neutral-100 hover:bg-[#D71920] hover:text-white flex items-center justify-center text-neutral-400 transition-all duration-200">
+          <span class="material-symbols-outlined" style="font-size:18px;">photo_camera</span>
         </a>
         <a href="https://wa.me/5492615391110" target="_blank" rel="noopener"
-          class="w-9 h-9 rounded-full bg-neutral-100 hover:bg-[#D71920] hover:text-white flex items-center justify-center text-neutral-400 transition-all duration-200">
+          class="w-9 h-9 rounded-full bg-neutral-100 hover:bg-[#25D366] hover:text-white flex items-center justify-center text-neutral-400 transition-all duration-200">
           <span class="material-symbols-outlined" style="font-size:18px;">phone</span>
-        </a>
-        <a href="#" class="w-9 h-9 rounded-full bg-neutral-100 hover:bg-[#D71920] hover:text-white flex items-center justify-center text-neutral-400 transition-all duration-200">
-          <span class="material-symbols-outlined" style="font-size:18px;">alternate_email</span>
         </a>
       </div>
     </div>
@@ -373,20 +611,19 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
+  .nav-serif { font-family: 'Noto Serif', serif; }
+
   .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     vertical-align: middle;
   }
 
-  /* Mobile menu */
   #mobile-menu.is-open { display: flex; }
 
-  /* Hamburger → X */
   #menu-toggle.is-open .ham-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
   #menu-toggle.is-open .ham-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
   #menu-toggle.is-open .ham-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-  /* Scroll-reveal */
   .reveal-card {
     transform: translateY(28px);
     transition: opacity 0.6s ease, transform 0.6s ease;
@@ -396,24 +633,26 @@ import Layout from '../layouts/Layout.astro';
     transform: translateY(0);
   }
 
-  /* WhatsApp float pulse */
   @keyframes wa-pulse {
     0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
     60% { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
   }
   #wa-float { animation: wa-pulse 2.8s ease-in-out infinite; }
   #wa-float:hover { animation: none; }
+
+  .glass-panel {
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+  }
 </style>
 
 <script>
-  // Scroll progress
   const bar = document.getElementById('scroll-progress') as HTMLElement;
   window.addEventListener('scroll', () => {
     const h = document.documentElement.scrollHeight - window.innerHeight;
     bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
   }, { passive: true });
 
-  // Mobile menu
   const toggle = document.getElementById('menu-toggle')!;
   const menu = document.getElementById('mobile-menu')!;
   toggle.addEventListener('click', () => {
@@ -425,20 +664,18 @@ import Layout from '../layouts/Layout.astro';
     l.addEventListener('click', () => { toggle.classList.remove('is-open'); menu.classList.remove('is-open'); })
   );
 
-  // Intersection Observer
   const obs = new IntersectionObserver(
     entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } }),
-    { threshold: 0.12 }
+    { threshold: 0.1 }
   );
   document.querySelectorAll('.reveal-card').forEach(el => obs.observe(el));
 
-  // Form → WhatsApp
   const form = document.getElementById('lead-form') as HTMLFormElement;
   form?.addEventListener('submit', e => {
     e.preventDefault();
     const get = (n: string) => (form.querySelector(`[name="${n}"]`) as HTMLInputElement)?.value.trim() || '-';
     const msg = encodeURIComponent(
-      `Hola, me interesa el curso TCP (Tripulante de Cabina de Pasajeros).\n` +
+      `Hola, me interesa el curso TCP – Good Flight.\n` +
       `Nombre: ${get('nombre')}\nTeléfono: ${get('telefono')}\nCiudad: ${get('ciudad')}`
     );
     window.open(`https://wa.me/5492615391110?text=${msg}`, '_blank');
