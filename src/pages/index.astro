@@ -1,17 +1,448 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+
+  <!-- ===== SCROLL PROGRESS BAR ===== -->
+  <div id="scroll-progress" class="fixed top-0 left-0 z-[60] h-[3px] bg-[#C4A456] w-0"></div>
+
+  <!-- ===== NAV ===== -->
+  <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-neutral-100 shadow-sm h-20">
+    <div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 h-full">
+
+      <a href="/" class="flex items-center gap-3">
+        <img src="/logo.jpeg" alt="Good Flight Logo" class="h-11 w-auto rounded-sm" />
+        <span class="text-2xl font-bold text-[#D71920]" style="font-family: 'Noto Serif', serif;">Good Flight</span>
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#metodologia" class="text-[#D71920] border-b-2 border-[#D71920] pb-0.5 font-medium text-sm" style="font-family: 'Noto Serif', serif;">Metodología</a>
+        <a href="#programa" class="text-neutral-600 font-medium text-sm hover:text-[#D71920] transition-colors duration-200" style="font-family: 'Noto Serif', serif;">Programa</a>
+        <a href="#beneficios" class="text-neutral-600 font-medium text-sm hover:text-[#D71920] transition-colors duration-200" style="font-family: 'Noto Serif', serif;">Beneficios</a>
+        <a href="#preguntas" class="text-neutral-600 font-medium text-sm hover:text-[#D71920] transition-colors duration-200" style="font-family: 'Noto Serif', serif;">Preguntas</a>
+        <a href="https://wa.me/5492615391110" target="_blank" rel="noopener" class="flex items-center gap-1.5 text-neutral-500 hover:text-[#D71920] transition-colors text-sm" style="font-family: 'Noto Serif', serif;">
+          <span class="material-symbols-outlined" style="font-size:16px;">phone</span>
+          +54 9 261 539-1110
+        </a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/5492615391110?text=Hola%2C+quiero+inscribirme+al+curso+TCP" target="_blank" rel="noopener"
+          class="hidden md:inline-flex bg-[#D71920] text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-[#ae0011] active:scale-95 transition-all duration-200 shadow-sm">
+          Inscribirme
+        </a>
+        <!-- Hamburger -->
+        <button id="menu-toggle" aria-label="Abrir menú"
+          class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 rounded-lg hover:bg-neutral-100 transition-colors">
+          <span class="ham-line block w-6 h-0.5 bg-neutral-700 transition-all duration-300 origin-center"></span>
+          <span class="ham-line block w-6 h-0.5 bg-neutral-700 transition-all duration-300 origin-center"></span>
+          <span class="ham-line block w-6 h-0.5 bg-neutral-700 transition-all duration-300 origin-center"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu dropdown -->
+    <div id="mobile-menu"
+      class="md:hidden absolute top-20 left-0 right-0 bg-white border-b border-neutral-100 shadow-lg px-6 py-6 flex-col gap-4 hidden">
+      <a href="#metodologia" class="mobile-link text-neutral-700 font-medium py-2.5 border-b border-neutral-100 flex items-center justify-between" style="font-family:'Noto Serif',serif;">
+        Metodología <span class="material-symbols-outlined text-neutral-400" style="font-size:18px;">chevron_right</span>
+      </a>
+      <a href="#programa" class="mobile-link text-neutral-700 font-medium py-2.5 border-b border-neutral-100 flex items-center justify-between" style="font-family:'Noto Serif',serif;">
+        Programa <span class="material-symbols-outlined text-neutral-400" style="font-size:18px;">chevron_right</span>
+      </a>
+      <a href="#beneficios" class="mobile-link text-neutral-700 font-medium py-2.5 border-b border-neutral-100 flex items-center justify-between" style="font-family:'Noto Serif',serif;">
+        Beneficios <span class="material-symbols-outlined text-neutral-400" style="font-size:18px;">chevron_right</span>
+      </a>
+      <a href="#preguntas" class="mobile-link text-neutral-700 font-medium py-2.5 border-b border-neutral-100 flex items-center justify-between" style="font-family:'Noto Serif',serif;">
+        Preguntas <span class="material-symbols-outlined text-neutral-400" style="font-size:18px;">chevron_right</span>
+      </a>
+      <a href="https://wa.me/5492615391110?text=Hola%2C+quiero+inscribirme+al+curso+TCP"
+        target="_blank" rel="noopener"
+        class="mt-2 w-full bg-[#D71920] text-white py-3.5 rounded-lg font-bold text-sm text-center tracking-wider hover:bg-[#ae0011] transition-colors">
+        INSCRIBIRME AL CURSO
+      </a>
+      <a href="https://wa.me/5492615391110" target="_blank" rel="noopener"
+        class="w-full border-2 border-[#C4A456] text-[#C4A456] py-3.5 rounded-lg font-bold text-sm text-center tracking-wider flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined" style="font-size:18px;">phone</span>
+        +54 9 261 539-1110
+      </a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXApJxCIqg9kKsjzschP3v6RmoEVEXf-XbUn5KA6iJPKmGwvq7letBZHZT-LbfHB8oJclAR4f1RHM_GmZ1LZrmlUVPy8fbXY11TXyjQSMmp5b9KtfYGugPKljJzR6YMzGfF0aVtyEelt49CteLEDyPl1QuIKWh6eUlWREeJkSz0HnDkZKB3xxmNrrO6vgM_M3XY1wnVBNPIfilhHCkt6Cj_Polmaji1uYM_SECA56FfZh-q9u1_93OhYhpt2hy8pHUFDcKB_aYN9E"
+        alt="Cabina de aeronave con azafata profesional"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/45"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-8 grid md:grid-cols-2 gap-12 items-center py-16">
+
+      <!-- Copy -->
+      <div class="text-white animate-fade-in-up">
+        <span class="inline-block bg-[#C4A456] text-white px-4 py-1 rounded-full text-label-sm mb-6">
+          Próximo inicio — Anotate ya
+        </span>
+        <h1 class="text-display mb-6">Tu carrera en las nubes comienza aquí.</h1>
+        <p class="text-xl font-semibold mb-3 text-neutral-100 leading-relaxed" style="font-family:'Noto Serif',serif;">
+          Curso de Tripulante de Cabina de Pasajeros (TCP) — Modalidad Presencial
+        </p>
+        <p class="text-sm text-neutral-300 mb-10">
+          Teoría y prácticas en Mendoza · Práctica de vuelo en Buenos Aires
+        </p>
+        <div class="flex flex-wrap items-center gap-5 text-sm text-neutral-200">
+          <span class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[#C4A456]" style="font-size:20px;font-variation-settings:'FILL' 1;">verified</span>
+            Título Oficial ANAC
+          </span>
+          <span class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[#C4A456]" style="font-size:20px;font-variation-settings:'FILL' 1;">location_on</span>
+            100% Presencial
+          </span>
+          <span class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[#C4A456]" style="font-size:20px;font-variation-settings:'FILL' 1;">schedule</span>
+            Inicio Próximamente
+          </span>
+        </div>
+      </div>
+
+      <!-- Form card -->
+      <div class="glass-panel p-7 md:p-8 rounded-2xl shadow-2xl w-full md:max-w-md md:ml-auto animate-fade-in-up-delay-2">
+        <h3 class="text-headline-md text-neutral-900 mb-1.5">Anotate al curso</h3>
+        <p class="text-neutral-500 mb-6 text-sm leading-relaxed">
+          Dejanos tus datos y te contactamos por WhatsApp con toda la información y fecha de inicio.
+        </p>
+
+        <!-- Primary: WhatsApp CTA -->
+        <a
+          href="https://wa.me/5492615391110?text=Hola%2C+quiero+m%C3%A1s+informaci%C3%B3n+sobre+el+curso+de+TCP+(Tripulante+de+Cabina+de+Pasajeros)"
+          target="_blank" rel="noopener"
+          class="w-full flex items-center justify-center gap-3 bg-[#25D366] text-white py-4 rounded-xl font-bold text-sm tracking-wider hover:bg-[#1ebe5d] active:scale-[0.98] transition-all duration-200 shadow-lg hover:shadow-xl mb-5"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          QUIERO INSCRIBIRME
+        </a>
+
+        <div class="flex items-center gap-3 mb-5">
+          <div class="flex-1 h-px bg-neutral-200"></div>
+          <span class="text-xs text-neutral-400 font-medium">o dejá tus datos</span>
+          <div class="flex-1 h-px bg-neutral-200"></div>
+        </div>
+
+        <form class="space-y-3" id="lead-form">
+          <div>
+            <label class="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-1.5">Nombre Completo</label>
+            <input type="text" name="nombre" placeholder="Ej. Ana García"
+              class="w-full px-4 py-3 rounded-lg border border-neutral-300 bg-white text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#C4A456] focus:border-transparent text-sm" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-1.5">Teléfono / WhatsApp</label>
+            <input type="tel" name="telefono" placeholder="+54 9 261 000-0000"
+              class="w-full px-4 py-3 rounded-lg border border-neutral-300 bg-white text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#C4A456] focus:border-transparent text-sm" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-1.5">Ciudad</label>
+            <input type="text" name="ciudad" placeholder="Mendoza"
+              class="w-full px-4 py-3 rounded-lg border border-neutral-300 bg-white text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#C4A456] focus:border-transparent text-sm" />
+          </div>
+          <button type="submit"
+            class="w-full bg-[#D71920] text-white py-3.5 rounded-lg font-bold text-sm tracking-widest hover:bg-[#ae0011] active:scale-[0.98] transition-all duration-200 shadow-lg hover:shadow-xl mt-1">
+            RECIBIR INFORMACIÓN
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== METODOLOGÍA ===== -->
+  <section id="metodologia" class="py-24 bg-[#f3f4f5]">
+    <div class="max-w-7xl mx-auto px-6 md:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-headline-lg text-[#D71920] mb-4">Formación de Excelencia</h2>
+        <div class="h-0.5 w-20 bg-[#C4A456] mx-auto"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8" id="programa">
+        <div class="reveal-card bg-white p-8 rounded-lg shadow-sm gold-gradient-border hover:shadow-xl hover:-translate-y-1 transition-all duration-300 opacity-0">
+          <div class="flex items-start justify-between mb-6">
+            <span class="material-symbols-outlined text-5xl text-[#C4A456]" style="font-variation-settings:'FILL' 1;">location_city</span>
+            <span class="text-6xl font-black text-neutral-100 leading-none select-none" style="font-family:'Noto Serif',serif;">01</span>
+          </div>
+          <h4 class="text-headline-md mb-4">Formación Presencial</h4>
+          <p class="text-neutral-600 text-sm leading-relaxed">Clases teóricas y prácticas acuáticas/terrestres en nuestras sedes de Mendoza. Prácticas de vuelo real coordinadas en Buenos Aires.</p>
+        </div>
+
+        <div class="reveal-card bg-white p-8 rounded-lg shadow-sm gold-gradient-border hover:shadow-xl hover:-translate-y-1 transition-all duration-300 opacity-0" style="transition-delay:0.12s;">
+          <div class="flex items-start justify-between mb-6">
+            <span class="material-symbols-outlined text-5xl text-[#C4A456]" style="font-variation-settings:'FILL' 1;">workspace_premium</span>
+            <span class="text-6xl font-black text-neutral-100 leading-none select-none" style="font-family:'Noto Serif',serif;">02</span>
+          </div>
+          <h4 class="text-headline-md mb-4">Aval ANAC</h4>
+          <p class="text-neutral-600 text-sm leading-relaxed">Nuestro programa cumple con los más altos estándares internacionales y está avalado por la Administración Nacional de Aviación Civil.</p>
+        </div>
+
+        <div class="reveal-card bg-white p-8 rounded-lg shadow-sm gold-gradient-border hover:shadow-xl hover:-translate-y-1 transition-all duration-300 opacity-0" style="transition-delay:0.24s;">
+          <div class="flex items-start justify-between mb-6">
+            <span class="material-symbols-outlined text-5xl text-[#C4A456]" style="font-variation-settings:'FILL' 1;">menu_book</span>
+            <span class="text-6xl font-black text-neutral-100 leading-none select-none" style="font-family:'Noto Serif',serif;">03</span>
+          </div>
+          <h4 class="text-headline-md mb-4">Currícula Completa</h4>
+          <p class="text-neutral-600 text-sm leading-relaxed">Desde seguridad aérea y primeros auxilios hasta servicio a bordo de lujo y etiqueta internacional. Todo lo que necesitas para brillar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POR QUÉ GOOD FLIGHT ===== -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center gap-16">
+
+      <div class="md:w-1/2 reveal-card opacity-0">
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuytKHfA8b_MJQPHzszRceVDlFmeeHyPDZ_SrSMSNrudnW7qFa_Kwxd6rFauWqkfs-yZl65vTETWSjbWMNXxjtOaLSy3hfVNefvGqXT5csJxQgrU_3lb-jSz3kJkOvlkiEZhi-F8ac2H8fVoDtdMcwtDYD4f5BdFUqiT-gxu7jn06erqkWlEIFyrCQj5J0C8Oc0t5gPFzfebTqNLMIOi8VaSiFVFzny2mjP-J9MZk8LuDKcQVTrhqGWFGesoHsgYdkk6yytjDynRI"
+            alt="Instalaciones de entrenamiento Good Flight" class="w-full h-auto"
+          />
+          <div class="absolute bottom-0 left-0 right-0 h-1 bg-[#C4A456]"></div>
+        </div>
+      </div>
+
+      <div class="md:w-1/2 reveal-card opacity-0" style="transition-delay:0.15s;">
+        <h2 class="text-headline-lg text-neutral-900 mb-5">¿Por qué elegir Good Flight?</h2>
+        <p class="text-neutral-500 text-lg mb-10 italic leading-relaxed" style="font-family:'Noto Serif',serif;">
+          "Liderando la formación aeronáutica con trayectoria y excelencia académica en Mendoza."
+        </p>
+        <ul class="space-y-7">
+          <li class="flex items-start gap-5">
+            <div class="bg-red-50 p-2.5 rounded-lg flex-shrink-0">
+              <span class="material-symbols-outlined text-[#D71920]" style="font-size:22px;font-variation-settings:'FILL' 1;">check_circle</span>
+            </div>
+            <div>
+              <span class="font-bold text-neutral-900 block mb-1">Instructores Activos</span>
+              <span class="text-neutral-500 text-sm leading-relaxed">Aprende de profesionales que operan actualmente en las aerolíneas más importantes del mundo.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-5">
+            <div class="bg-red-50 p-2.5 rounded-lg flex-shrink-0">
+              <span class="material-symbols-outlined text-[#D71920]" style="font-size:22px;font-variation-settings:'FILL' 1;">check_circle</span>
+            </div>
+            <div>
+              <span class="font-bold text-neutral-900 block mb-1">Prácticas Intensivas</span>
+              <span class="text-neutral-500 text-sm leading-relaxed">Días intensivos de formación práctica presencial en simuladores de última generación.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-5">
+            <div class="bg-red-50 p-2.5 rounded-lg flex-shrink-0">
+              <span class="material-symbols-outlined text-[#D71920]" style="font-size:22px;font-variation-settings:'FILL' 1;">check_circle</span>
+            </div>
+            <div>
+              <span class="font-bold text-neutral-900 block mb-1">Bolsa de Trabajo</span>
+              <span class="text-neutral-500 text-sm leading-relaxed">Convenios exclusivos con aerolíneas nacionales e internacionales para nuestros egresados.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BENEFICIOS ===== -->
+  <section id="beneficios" class="py-24 bg-neutral-900 text-white overflow-hidden relative">
+    <div class="skew-bg"></div>
+    <div class="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+      <div class="mb-14 reveal-card opacity-0">
+        <h2 class="text-headline-lg text-[#C4A456] mb-4">Beneficios del Curso Presencial</h2>
+        <p class="text-neutral-400 max-w-xl text-sm leading-relaxed">
+          Diseñado para darte la formación completa que exigen las aerolíneas, con instructores activos y prácticas reales.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="reveal-card md:col-span-2 bg-neutral-800 p-8 rounded-xl flex flex-col justify-between border border-neutral-700 hover:border-[#C4A456]/40 transition-colors duration-300 opacity-0">
+          <div>
+            <h3 class="text-headline-md text-[#C4A456] mb-4">Infraestructura de Vanguardia</h3>
+            <p class="text-neutral-300 text-sm leading-relaxed">Contamos con instalaciones modernas en Mendoza preparadas para simulaciones de emergencia y servicio a bordo de primer nivel.</p>
+          </div>
+          <div class="mt-8 flex justify-end">
+            <span class="material-symbols-outlined text-6xl opacity-10 text-[#C4A456]">apartment</span>
+          </div>
+        </div>
+        <div class="reveal-card bg-[#D71920] p-8 rounded-xl opacity-0" style="transition-delay:0.12s;">
+          <h3 class="text-headline-md mb-4">Inicio Próximamente</h3>
+          <p class="text-sm opacity-90 leading-relaxed">El curso presencial TCP comenzará pronto en Mendoza. ¡Anotate ahora y asegurá tu lugar!</p>
+          <a href="https://wa.me/5492615391110?text=Hola%2C+quiero+anotarme+al+curso+TCP" target="_blank" rel="noopener"
+            class="mt-6 inline-flex items-center gap-2 bg-white text-[#D71920] px-4 py-2.5 rounded-lg font-bold text-xs tracking-wider hover:bg-neutral-100 transition-colors">
+            ANOTARME
+          </a>
+        </div>
+        <div class="reveal-card bg-neutral-800 p-8 rounded-xl border border-neutral-700 hover:border-[#C4A456]/40 transition-colors duration-300 opacity-0" style="transition-delay:0.24s;">
+          <h3 class="text-headline-md mb-4">Clases en Vivo</h3>
+          <p class="text-sm text-neutral-400 leading-relaxed">Clases presenciales con instructores activos para resolución de dudas y práctica real en todo momento.</p>
+        </div>
+        <div class="reveal-card md:col-span-4 bg-[#C4A456]/10 p-10 rounded-xl flex flex-col md:flex-row items-center gap-8 border border-[#C4A456]/25 hover:border-[#C4A456]/50 transition-colors duration-300 opacity-0" style="transition-delay:0.36s;">
+          <span class="material-symbols-outlined text-7xl text-[#C4A456] flex-shrink-0" style="font-variation-settings:'FILL' 1;">airplane_ticket</span>
+          <div>
+            <h3 class="text-headline-md text-[#C4A456] mb-2">Prácticas de Vuelo en Buenos Aires</h3>
+            <p class="text-neutral-300 text-sm leading-relaxed max-w-2xl">Complementamos la formación teórica presencial en Mendoza con módulos de práctica de vuelo real en Buenos Aires, garantizando que domines cada procedimiento antes de tu examen ANAC.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA FINAL ===== -->
+  <section id="preguntas" class="py-32 bg-white text-center">
+    <div class="max-w-4xl mx-auto px-6 md:px-8 reveal-card opacity-0">
+      <p class="text-label-sm text-[#C4A456] mb-4">El próximo paso es tuyo</p>
+      <h2 class="text-display mb-8 italic">¿Lista para despegar?</h2>
+      <p class="text-lg text-neutral-500 mb-14 max-w-xl mx-auto leading-relaxed">
+        El curso TCP presencial comienza próximamente. Anotate ahora y te contactamos con todos los detalles por WhatsApp.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-5">
+        <a href="https://wa.me/5492615391110?text=Hola%2C+quiero+inscribirme+al+curso+de+TCP+(Tripulante+de+Cabina+de+Pasajeros)"
+          target="_blank" rel="noopener"
+          class="flex items-center justify-center gap-3 bg-[#25D366] text-white px-10 py-5 rounded-lg font-bold text-sm tracking-widest hover:bg-[#1ebe5d] hover:-translate-y-0.5 transition-all duration-200 shadow-xl hover:shadow-2xl">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          INSCRIBIRME AL CURSO
+        </a>
+        <a href="https://wa.me/5492615391110" target="_blank" rel="noopener"
+          class="border-2 border-[#C4A456] text-[#C4A456] px-10 py-5 rounded-lg font-bold text-sm tracking-widest hover:bg-[#C4A456] hover:text-white hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2.5">
+          <span class="material-symbols-outlined" style="font-size:20px;">phone</span>
+          CONSULTAR AHORA
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-neutral-50 border-t border-neutral-200 pt-14 pb-10">
+    <div class="max-w-7xl mx-auto px-6 md:px-8 flex flex-col md:flex-row justify-between items-center gap-10">
+      <div class="flex flex-col items-center md:items-start gap-4">
+        <div class="flex items-center gap-3">
+          <img src="/logo.jpeg" alt="Logo Good Flight" class="h-10 w-auto opacity-90 rounded-sm" />
+          <span class="text-xl font-bold text-[#D71920]" style="font-family:'Noto Serif',serif;">Good Flight</span>
+        </div>
+        <p class="text-neutral-400 text-xs max-w-xs text-center md:text-left leading-relaxed" style="font-family:'Noto Serif',serif;">
+          © 2025 Good Flight Training Center.<br>Excelencia en Formación Aeronáutica.
+        </p>
+        <a href="https://wa.me/5492615391110" target="_blank" rel="noopener"
+          class="flex items-center gap-1.5 text-neutral-400 hover:text-[#D71920] transition-colors text-xs">
+          <span class="material-symbols-outlined" style="font-size:14px;">phone</span>
+          +54 9 261 539-1110
+        </a>
+      </div>
+      <nav class="flex flex-wrap justify-center gap-8 text-xs tracking-widest uppercase">
+        <a href="#" class="text-neutral-400 hover:text-neutral-800 transition-colors" style="font-family:'Noto Serif',serif;">Privacidad</a>
+        <a href="#" class="text-neutral-400 hover:text-neutral-800 transition-colors" style="font-family:'Noto Serif',serif;">Términos y Condiciones</a>
+        <a href="#" class="text-neutral-400 hover:text-neutral-800 transition-colors" style="font-family:'Noto Serif',serif;">Contacto</a>
+      </nav>
+      <div class="flex gap-3">
+        <a href="#" class="w-9 h-9 rounded-full bg-neutral-100 hover:bg-[#D71920] hover:text-white flex items-center justify-center text-neutral-400 transition-all duration-200">
+          <span class="material-symbols-outlined" style="font-size:18px;">public</span>
+        </a>
+        <a href="https://wa.me/5492615391110" target="_blank" rel="noopener"
+          class="w-9 h-9 rounded-full bg-neutral-100 hover:bg-[#D71920] hover:text-white flex items-center justify-center text-neutral-400 transition-all duration-200">
+          <span class="material-symbols-outlined" style="font-size:18px;">phone</span>
+        </a>
+        <a href="#" class="w-9 h-9 rounded-full bg-neutral-100 hover:bg-[#D71920] hover:text-white flex items-center justify-center text-neutral-400 transition-all duration-200">
+          <span class="material-symbols-outlined" style="font-size:18px;">alternate_email</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== WHATSAPP FLOAT ===== -->
+  <a id="wa-float"
+    href="https://wa.me/5492615391110?text=Hola%2C+quiero+m%C3%A1s+informaci%C3%B3n+sobre+el+curso+TCP"
+    target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"
+    class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] text-white rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-transform duration-200"
+    style="padding: 14px 20px 14px 16px;">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span class="font-bold text-sm tracking-wide whitespace-nowrap">Consultar ahora</span>
+  </a>
+
+</Layout>
+
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+  }
+
+  /* Mobile menu */
+  #mobile-menu.is-open { display: flex; }
+
+  /* Hamburger → X */
+  #menu-toggle.is-open .ham-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  #menu-toggle.is-open .ham-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  #menu-toggle.is-open .ham-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  /* Scroll-reveal */
+  .reveal-card {
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal-card.is-visible {
+    opacity: 1 !important;
+    transform: translateY(0);
+  }
+
+  /* WhatsApp float pulse */
+  @keyframes wa-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+    60% { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
+  }
+  #wa-float { animation: wa-pulse 2.8s ease-in-out infinite; }
+  #wa-float:hover { animation: none; }
+</style>
+
+<script>
+  // Scroll progress
+  const bar = document.getElementById('scroll-progress') as HTMLElement;
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+  }, { passive: true });
+
+  // Mobile menu
+  const toggle = document.getElementById('menu-toggle')!;
+  const menu = document.getElementById('mobile-menu')!;
+  toggle.addEventListener('click', () => {
+    const open = toggle.classList.toggle('is-open');
+    menu.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  });
+  document.querySelectorAll('.mobile-link').forEach(l =>
+    l.addEventListener('click', () => { toggle.classList.remove('is-open'); menu.classList.remove('is-open'); })
+  );
+
+  // Intersection Observer
+  const obs = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } }),
+    { threshold: 0.12 }
+  );
+  document.querySelectorAll('.reveal-card').forEach(el => obs.observe(el));
+
+  // Form → WhatsApp
+  const form = document.getElementById('lead-form') as HTMLFormElement;
+  form?.addEventListener('submit', e => {
+    e.preventDefault();
+    const get = (n: string) => (form.querySelector(`[name="${n}"]`) as HTMLInputElement)?.value.trim() || '-';
+    const msg = encodeURIComponent(
+      `Hola, me interesa el curso TCP (Tripulante de Cabina de Pasajeros).\n` +
+      `Nombre: ${get('nombre')}\nTeléfono: ${get('telefono')}\nCiudad: ${get('ciudad')}`
+    );
+    window.open(`https://wa.me/5492615391110?text=${msg}`, '_blank');
+  });
+</script>
