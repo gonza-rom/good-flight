@@ -151,10 +151,10 @@ import Layout from "../layouts/Layout.astro";
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full py-10 sm:py-16">
-      <div class="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div class="flex flex-col items-start">
 
         <!-- Copy -->
-        <div class="text-white w-full">
+        <div class="text-white w-full md:max-w-xl">
           <div class="animate-fade-in-up">
             <span class="hero-badge inline-block bg-[#C4A456]/15 border border-[#C4A456]/60 text-[#C4A456] px-3 sm:px-4 py-1.5 rounded-full text-[9px] sm:text-[10px] font-700 tracking-widest mb-6 sm:mb-8 uppercase backdrop-blur-sm">
               Próximamente · Cupos Limitados
@@ -174,65 +174,6 @@ import Layout from "../layouts/Layout.astro";
           </div>
         </div>
 
-        <!-- Form card -->
-        <div class="glass-panel p-5 sm:p-7 md:p-8 rounded-2xl shadow-2xl w-full md:max-w-md md:ml-auto animate-fade-in-up-delay-3">
-          <h3
-            class="text-neutral-900 mb-1.5"
-            style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,4vw,1.6rem);font-weight:600;"
-          >
-            Anotate al curso
-          </h3>
-          <p
-            class="text-neutral-500 mb-5 sm:mb-6 text-xs sm:text-sm leading-relaxed"
-            style="font-family:'Montserrat',sans-serif;"
-          >
-            Dejanos tus datos y te contactamos por WhatsApp con toda la información y la fecha de inicio.
-          </p>
-          <div class="flex items-center gap-3 mb-4 sm:mb-5">
-            <div class="flex-1 h-px bg-neutral-200"></div>
-            <span class="text-xs text-neutral-400 font-medium whitespace-nowrap" style="font-family:'Montserrat',sans-serif;">dejá tus datos</span>
-            <div class="flex-1 h-px bg-neutral-200"></div>
-          </div>
-          <form class="space-y-3" id="lead-form">
-            <div>
-              <label class="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-1.5" style="font-family:'Montserrat',sans-serif;">Nombre Completo</label>
-              <input
-                type="text"
-                name="nombre"
-                placeholder="Ej. Ana García"
-                class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-neutral-300 bg-white text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#C4A456] focus:border-transparent text-sm"
-                style="font-family:'Montserrat',sans-serif;"
-              />
-            </div>
-            <div>
-              <label class="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-1.5" style="font-family:'Montserrat',sans-serif;">Teléfono / WhatsApp</label>
-              <input
-                type="tel"
-                name="telefono"
-                placeholder="+54 9 261 000-0000"
-                class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-neutral-300 bg-white text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#C4A456] focus:border-transparent text-sm"
-                style="font-family:'Montserrat',sans-serif;"
-              />
-            </div>
-            <div>
-              <label class="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-1.5" style="font-family:'Montserrat',sans-serif;">Ciudad</label>
-              <input
-                type="text"
-                name="ciudad"
-                placeholder="Mendoza"
-                class="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-neutral-300 bg-white text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#C4A456] focus:border-transparent text-sm"
-                style="font-family:'Montserrat',sans-serif;"
-              />
-            </div>
-            <button
-              type="submit"
-              class="w-full bg-[#D71920] text-white py-3 sm:py-3.5 rounded-lg font-bold text-xs sm:text-sm tracking-widest hover:bg-[#ae0011] active:scale-[0.98] transition-all duration-200 shadow-lg hover:shadow-xl mt-1"
-              style="font-family:'Montserrat',sans-serif;letter-spacing:.14em;"
-            >
-              RECIBIR INFORMACIÓN
-            </button>
-          </form>
-        </div>
       </div>
     </div>
   </section>
